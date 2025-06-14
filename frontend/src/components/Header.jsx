@@ -4,12 +4,12 @@ import mushroomLogin from '../assets/mushroomlogin.png';
 
 export default function Header({ title, subtitle }) {
     const navigate = useNavigate();
+    const uloga = sessionStorage.getItem('uloga_korisnik');
     const [imeKorisnik, setImeKorisnik] = useState(null);
     const [ulogaKorisnik, setUlogaKorisnik] = useState(null);
   
     useEffect(() => {
         const ime = sessionStorage.getItem('ime_korisnik');
-        const uloga = sessionStorage.getItem('uloga_korisnik');
         if (ime) setImeKorisnik(ime);
         if (uloga) setUlogaKorisnik(uloga);
     }, []);
@@ -35,7 +35,7 @@ export default function Header({ title, subtitle }) {
         <div className="top" id="headerbuttons">
           {imeKorisnik ? (
             <>
-              <p>Dobrodošao, {imeKorisnik}! Uloga: {ulogaKorisnik}</p>
+              <p>Dobrodošao, {imeKorisnik}! Uloga : {ulogaKorisnik}</p>
               <button onClick={handleLogout}>Odjava</button>
             </>
           ) : (

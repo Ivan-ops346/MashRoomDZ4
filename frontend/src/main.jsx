@@ -7,6 +7,7 @@ import Register from './pages/Register.jsx';
 import UnosForm from './pages/UnosForm.jsx';
 import UnosiList from './pages/UnosiList.jsx';
 import Home from './pages/Home.jsx';
+import Kviz from './pages/Kviz.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="unos" element={<UnosForm />} />
           <Route path="unosi/:id/uredi" element={<UnosForm />} />
           <Route path="unosi" element={<UnosiList />} />
+          <Route path="/kviz" element={<Kviz />} />
         </Route>
       </Routes>
     </BrowserRouter>

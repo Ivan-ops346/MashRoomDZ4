@@ -37,6 +37,9 @@ app.get('/', (req, res) => {
   res.send('API working');
 });
 
+const quizRoutes = require('./routes/quiz');
+app.use('/api/kviz', quizRoutes);
+
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(PORT, () => {

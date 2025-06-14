@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kviz o gljivama</title>
+    <link rel="stylesheet" href="/components/quiz.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Kviz o gljivama</h1>
+        <form id="quizForm">
+            <% questions.forEach((q, index) => { %>
+                <div class="question">
+                    <h3><%= (index + 1) + ". " + q.question %></h3>
+                    <% q.options.forEach(option => { %>
+                        <label class="option">
+                            <input 
+                                type="radio" 
+                                name="question_<%= q._id %>" 
+                                value="<%= option %>"
+                                required
+                            >
+                            <%= option %>
+                        </label>
+                    <% }); %>
+                </div>
+            <% }); %>
+            <button type="submit">Pošalji odgovore</button>
+        </form>
+    </div>
+
+    <script src="/js/quiz.js"></script>
+</body>
+</html>
