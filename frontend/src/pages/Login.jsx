@@ -28,6 +28,7 @@ export default function Login() {
 
       sessionStorage.setItem('token', data.token);
       sessionStorage.setItem('ime_korisnik', data.ime);
+      sessionStorage.setItem('uloga_korisnik', data.uloga);
 
       navigate('/unosi');
       window.location.reload();

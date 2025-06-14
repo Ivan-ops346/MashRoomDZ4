@@ -7,7 +7,7 @@ const login = async (req, res) => {
   
     try {
         const rezultat = await pool.query(
-            "SELECT id_korisnik, email, lozinka, ime FROM Korisnik WHERE email = $1",
+            "SELECT id_korisnik, email, lozinka, ime, uloga FROM Korisnik WHERE email = $1",
             [email]
         );
     
@@ -31,7 +31,8 @@ const login = async (req, res) => {
 
         return res.json({
             token,
-            ime: korisnik.ime
+            ime: korisnik.ime,
+            uloga: korisnik.uloga
         });
         } catch (err) {
             console.error("Greška u loginu:", err.message);
