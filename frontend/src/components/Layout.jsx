@@ -11,7 +11,8 @@ export default function Layout() {
         <Link to="/login">Prijava</Link> |{" "}
         <Link to="/register">Registracija</Link> |{" "}
         <Link to="/unosi">Moji unosi</Link> |{" "}
-        <Link to="/unos">Novi unos</Link>
+        <Link to="/unos">Novi unos</Link> |{" "}
+        <Link to="/PregledZadataka">Pregled Zadataka</Link>
       </nav>
       <main style={{ padding: '20px' }}>
         <Outlet />

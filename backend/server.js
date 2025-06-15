@@ -33,15 +33,12 @@ app.use("/api/auth", authRoute);
 const lokacijeRoute = require('./routes/lokacije');
 app.use('/api/lokacije', lokacijeRoute);
 
+const zadaciRoute = require('./routes/zadaci');
+app.use('/api/zadaci', zadaciRoute);
+
 app.get('/', (req, res) => {
   res.send('API working');
 });
-
-const quizRoutes = require('./routes/quiz');
-app.use('/api/kviz', quizRoutes);
-
-const korisnikRoutes = require('./routes/korisnik');
-app.use('/api/korisnik', korisnikRoutes);
 
 
 if (process.env.NODE_ENV !== 'test') {

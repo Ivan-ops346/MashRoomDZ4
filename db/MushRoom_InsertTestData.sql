@@ -1,13 +1,15 @@
 INSERT INTO Korisnik (id_korisnik, email, lozinka, sol, ime, datum_registracije, uloga) VALUES
   (1, 'ivan@example.com', '$2a$12$7RBafoS3G5k3Dq5k.M4pM.HkGEuGkESO1.mlZ4ab7JWsNIHug.7/y', '$2a$12$7RBafoS3G5k3Dq5k', 'Ivan', '2024-01-15', 'osnovni'),
-  (2, 'ana@example.com', '$2a$12$XpfGPFtToWtSbIX.WpDJluT24O4K9SP446n90aRLp/vJU5IvTmY8O', '$2a$12$XpfGPFtToWtSbIX', 'Ana', '2024-02-20', 'iskusni'),
-  (3, 'marko@example.com', '$2a$12$XBLWkdqoBim6tVBkzz1JJ.O9Wwm/uaz7GwG84u8SxDRp5f4nLpRVe', '$2a$12$XBLWkdqoBim6tVBkzz1JJ', 'Marko', '2024-03-10', 'osnovni');
+  (2, 'ana@example.com', '$2a$12$XpfGPFtToWtSbIX.WpDJluT24O4K9SP446n90aRLp/vJU5IvTmY8O', '$2a$12$XpfGPFtToWtSbIX', 'Ana', '2024-02-20', 'determinator'),
+  (3, 'marko@example.com', '$2a$12$6YlPbDjtib8.C7URf1BaoOBDbrzEtZGdmm0eVej/D.IMrhsE/c.Ju', '$2a$12$6YlPbDjtib8', 'Marko', '2024-03-10', 'determinatorMentor');
 
 INSERT INTO IskusniKorisnik (id_korisnik, determinator) VALUES
-  (2, True);
+  (2, True),
+  (3, TRUE);
 
 INSERT INTO VerifikacijaIskustva (id_verifikacije, id_korisnik, tip_dokaza, putanja_dokumenta, status, datum_podnosenja) VALUES
-  (1, 2, 'Certifikat', '/docs/certifikat.pdf', 'odobreno', '2024-04-01');
+  (1, 2, 'Certifikat',           '/docs/certifikat.pdf',         'odobreno', '2024-04-01'),
+  (2, 3, 'Potvrda mentora',      '/docs/potvrda_mentora.pdf',    'odobreno', '2024-05-01');
 
 INSERT INTO Gljiva (id_gljiva, latinski_naziv, hrvatski_naziv, jestiva, opis, slika) VALUES
   (1, 'Amanita muscaria', 'Muhara', False, 'Otrovna i psihotropna gljiva', 'https://upload.wikimedia.org/wikipedia/commons/0/03/Fly_Agaric_mushroom_04.jpg'),
