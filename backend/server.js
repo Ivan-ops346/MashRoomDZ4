@@ -40,6 +40,9 @@ app.get('/', (req, res) => {
 const quizRoutes = require('./routes/quiz');
 app.use('/api/kviz', quizRoutes);
 
+const korisnikRoutes = require('./routes/korisnik');
+app.use('/api/korisnik', korisnikRoutes);
+
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(PORT, () => {
